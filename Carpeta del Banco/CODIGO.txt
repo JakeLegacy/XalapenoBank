@@ -1,0 +1,84 @@
++m+mSistema Bancario
+
+Requerimientos:
+PRIMER CASO
+Creación de cuenta
+
+JERARQUIA DE USUARIOS
+Usuario:
+- Estado de cuenta
+- Retiros de dinero (sin tarjeta)
+- Transferencia (entre cuentas del mismo banco)
+- Crear cuenta desde aplicación
+(Requisitos:
+*Nombre Completo
+*CURP
+*Correo Electronico
+*Celular
+*R.F.C.)
+
+Moderador:
+- Permitir observar los estados de cuenta de los clientes
+- Permitir observar movimientos entre cuentas
+
+Administrador:
+- Permite las mismas funciones que él moderador
+- Permite modificar valores de cuentas, asi como el eliminarlas y añadirlas (también).
+
+
+SERVICIO ADMINISTRACIÓN
+Usuario: Tiene la capacidad de usar todos los servicios basicos de la aplicación, no puede editar el valor en el servicio de administración, tiene muchas limitantes
+Moderador: Es un tipo de administración que solo permite consultar datos de los clientes, no los puede editar y solo funciona para monitorear
+Administrador: Es el rango más alto de administración, puede monitorear y editar valores de las cuentas de cliente, al igual que observar los movimientos hechos
+
+ALGORTIMO:
+
+TODAS LAS VENTANAS TIENEN BOTÓN DE REGRESO EN LA PARTE INFERIOR DERECHA
+
+PESTAÑA PRINCIPAL
+El programa se abre, y muestra las opciones "¿Ya es cliente? Iniciar Sesión" y "¿No es cliente? Registrarse"
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO DE REGISTRO
+VENTANA DE REGISTRO
+Saldra una ventana con la opción de regresar a anterior paso, también pedirá nombre completo, RFC, correo electronico, CURP y celular. Así como un espacio de contraseña
+para crear.
+*en caso de ingresar un valor que ya está registrado en cualquier campo excepto en contraseña, decir "Dato ya ocupado, ingresar otro"
+
+VENTANA DE CREACIÓN DE CUENTA
+Se abre una ventana donde se presentan todos los datos ingresados y también un nombre de usuario proporcionado por el sistema. En el rincon inferior derecho habrá un botón
+que introduce a la ventana principal
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CASO DE INICIO DE SESIÓN
+INICIO DE SESIÓN
+Pide codigo de usuario y contraseña
+*en caso de ingresar codigo o contraseña equivocada, lanzar mensaje "intente de nuevo, datos invalidos"
+*en caso de ingresar codigo y contraseñas correctas, permitir siguiente ventana
+
+USUARIO
+Sale una ventana con el nombre del usuario, su celular y saldo disponible
+salen 3 opciones (Retiro de dinero {mediante codigo, ahi veo si lo hago con Random.math o algo asi}, Transferencia {entre cuentas del mismo banco}
+consultar estado de cuenta {muestra el saldo disponible, nombre completo, CURP, RFC, Correo Electronico, Celular})
+*************************************************************************************************************************************************************************
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TRANSFERENCIA
+Sale una ventana en la cual se pregunta cuanto dinero se quiere ingresar, cantidad indefinida
+
+TRANSFERENCIA 2
+Sale una ventana en la cual se pregunta a que usuario se le estará transfiriendo, en este caso, se pide el nombre de usuario
+*si es un usuario que no existe, no se permitirá hacer ninguna transferencia y pedirá un dato existente.
+
+TRANSFERENCIA 3
+Sale una ventana donde se pone el mensaje de "transferencia hecha" y el boton de regreso a pestaña principal.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RETIRO DE DINERO
+Sale una ventana que pregunta "¿cuanto dinero quiere retirar?"
+arriba del textfield irá el saldo que se posee está vez
+*si la cantidad puesta, excede la que se posee, no permitirá retirar ese dinero, y saldra el mensaje "ingrese valor valido"
+
+RETIRO DE DINERO 2
+Si los datos otorgados son correctos, la siguiente ventana tendrá un codigo hecho con Math.random o algo asi y un botón en el rincón inferior derecho para regresar a
+la ventana principal.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONSULTAR CUENTA
+Aparecerá una pestaña identica a la de "Ventana de creación de cuenta".
+
